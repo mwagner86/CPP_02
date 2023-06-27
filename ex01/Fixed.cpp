@@ -19,9 +19,9 @@ Fixed::Fixed(int const src) {
 	this->_fpn_value = src << Fixed::_digits;
 }
 
-Fixed::Fixed(float const input) {
+Fixed::Fixed(float const src) {
 	std::cout << "Float constructor called\n";
-	this->_fpn_value = (int)roundf(input * (1 << Fixed::_digits));
+	this->_fpn_value = (int)roundf(src * (1 << Fixed::_digits));
 }
 
 Fixed::~Fixed() {
@@ -45,7 +45,15 @@ Fixed &	Fixed::operator=(Fixed const &rhs) {
 	return *this;
 }
 
-std::ostream &	operator<<( std::ostream & o, Fixed const & i ) {
+float	Fixed::toFloat() const {
+	return ((float)this->_fpn_value / (1 << Fixed::_digits));
+}
+
+int		Fixed::toInt() const {
+	return (this->_fpn_value >> Fixed::_digits);
+}
+
+std::ostream &	operator<<(std::ostream & o, Fixed const & i) {
 	o << i.toFloat();
 	return o;
 }
@@ -55,11 +63,3 @@ std::ostream &	operator<<( std::ostream & o, Fixed const & i ) {
 	o << "The value of _fpn_value is : " << i.getRawBits();
 	return o;
 }*/
-
-float	Fixed::toFloat() const {
-	return ((float)this->_fpn_value / (1 << Fixed::_digits));
-}
-
-int		Fixed::toInt() const {
-	return (this->_fpn_value >> Fixed::_digits);
-}
