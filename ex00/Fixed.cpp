@@ -8,7 +8,7 @@
 
 Fixed::Fixed() {
 	std::cout << "Default Constructor called" << std::endl;
-	this->_fpn_value= 0;
+	this->_fpn_value = 0;
 }
 
 Fixed::Fixed(Fixed const &src) {
@@ -31,7 +31,7 @@ void	Fixed::setRawBits(int const raw) {
 }
 
 Fixed &	Fixed::operator=(Fixed const &rhs) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator overload called" << std::endl;
 	if ( this != &rhs )
 		this->_fpn_value = rhs.getRawBits();
 	return *this;
