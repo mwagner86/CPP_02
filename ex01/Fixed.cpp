@@ -50,6 +50,12 @@ std::ostream &	operator<<( std::ostream & o, Fixed const & i ) {
 	return o;
 }
 
+/*// uncomment this function to change the insertion operator overload
+std::ostream &	operator<<( std::ostream & o, Fixed const & i ) {
+	o << "The value of _fpn_value is : " << i.getRawBits();
+	return o;
+}*/
+
 float	Fixed::toFloat() const {
 	return ((float)this->_fpn_value / (1 << Fixed::_digits));
 }

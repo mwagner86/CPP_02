@@ -13,13 +13,13 @@ public:
 
 	Fixed();
 	Fixed(Fixed const & src);
-	Fixed(int const src);
-	Fixed(float const src);
+	Fixed(int src);
+	Fixed(float src);
 	~Fixed();
 
 	Fixed &	operator=( Fixed const & rhs );
 	int		getRawBits() const;
-	void	setRawBits( int const raw );
+	void	setRawBits(int raw);
 	float	toFloat() const;
 	int		toInt() const;
 
