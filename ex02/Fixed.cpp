@@ -93,3 +93,56 @@ bool	Fixed::operator!=(Fixed const & src) const {
 		return true;
 	return false;
 }
+
+Fixed Fixed::operator+(Fixed const & src) const {
+	return (Fixed(this->toFloat() + src.toFloat()));
+}
+
+Fixed Fixed::operator-(Fixed const & src) const {
+	return (Fixed(this->toFloat() - src.toFloat()));
+}
+
+Fixed Fixed::operator*(Fixed const & src) const {
+	return (Fixed(this->toFloat() * src.toFloat()));
+}
+
+Fixed Fixed::operator/(Fixed const & src) const {
+	return (Fixed(this->toFloat() / src.toFloat()));
+}
+
+Fixed & Fixed::operator++() {
+	++(this->_fpn_value);
+	return *this;
+}
+
+Fixed  Fixed::operator++(int) {
+	Fixed tmp(*this);
+	++(this->_fpn_value);
+	return (tmp);
+}
+
+Fixed & Fixed::operator--() {
+	--(this->_fpn_value);
+	return *this;
+}
+
+ Fixed Fixed::operator--(int) {
+	Fixed tmp(*this);
+	--(this->_fpn_value);
+	return (tmp);
+}
+
+Fixed & Fixed::min(Fixed & a, Fixed & b) {
+	return (a < b) ? a : b;
+}
+
+Fixed const & Fixed::min(Fixed const & a,  Fixed const & b) {
+	return (a < b) ? a : b;
+}
+Fixed & Fixed::max(Fixed & a, Fixed & b) {
+	return (a > b) ? a : b;
+}
+
+Fixed const & Fixed::max(Fixed const & a,  Fixed const & b) {
+	return (a > b) ? a : b;
+}

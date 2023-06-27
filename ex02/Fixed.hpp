@@ -34,6 +34,22 @@ public:
 	bool	operator<=(Fixed const & src) const;
 	bool	operator==(Fixed const & src) const;
 	bool	operator!=(Fixed const & src) const;
+	// overloaded arithmetic operators
+	Fixed	operator+(Fixed const & src) const;
+	Fixed	operator-(Fixed const & src) const;
+	Fixed	operator*(Fixed const & src) const;
+	Fixed	operator/(Fixed const & src) const;
+	// overloaded pre- and post- increment/decrement operators
+	Fixed &	operator++();
+	Fixed	operator++(int);
+	Fixed &	operator--();
+	Fixed	operator--(int);
+
+	// static overloaded member functions returning smallest/greatest number
+	static Fixed & min(Fixed & a, Fixed & b);
+	static Fixed const & min(Fixed const & a, Fixed const & b);
+	static Fixed & max(Fixed & a, Fixed & b);
+	static Fixed const & max(Fixed const & a, Fixed const & b);
 
 private:
 
