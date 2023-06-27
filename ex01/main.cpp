@@ -32,5 +32,11 @@ int main( void ) {
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
+/*	std::cout << std::endl;
+	Fixed e;
+	e.setRawBits(64);
+	std::cout << "Value of 'e' using getRawBits: " << e.getRawBits() << std::endl;
+	std::cout << "e is " << e.toFloat() << " as float" << std::endl;*/
+
 	return 0;
 }

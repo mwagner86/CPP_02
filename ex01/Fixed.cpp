@@ -20,7 +20,7 @@ Fixed::Fixed(int const src) {
 }
 
 Fixed::Fixed(float const src) {
-	std::cout << "Float constructor called\n";
+	std::cout << "Float constructor called" << std::endl;
 	this->_fpn_value = (int)roundf(src * (1 << Fixed::_digits));
 }
 
