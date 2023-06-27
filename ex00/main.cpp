@@ -3,6 +3,11 @@
 
 int main() {
 
+/*	Fixed a;
+	a.setRawBits(4242);
+
+	std::cout << "Value of 'a' using getRawBits: " << a.getRawBits() << std::endl;*/
+
 	Fixed a;
 	Fixed b( a );
 	Fixed c;
